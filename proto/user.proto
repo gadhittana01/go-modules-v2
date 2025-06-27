@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package user;
+
+option go_package = "github.com/chat-app/go-modules/proto";
+
+service UserService {
+  rpc GetUserByEmail(EmailRequest) returns (UserResponse);
+  rpc GetUserByID(UserIDRequest) returns (UserResponse);
+}
+
+message EmailRequest {
+  string email = 1;
+}
+
+message UserIDRequest {
+  string user_id = 1;
+}
+
+message UserResponse {
+  string id = 1;
+  string email = 2;
+  string name = 3;
+  string created_at = 4;
+} 
