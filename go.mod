@@ -1,4 +1,4 @@
-module github.com/chat-app/go-modules
+module github.com/gadhittana01/go-modules-v2
 
 go 1.21
 
