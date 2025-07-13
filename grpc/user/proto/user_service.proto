@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package pb;
+
+import "user_request.proto";
+import "user_response.proto";
+
+
+option go_package = "github.com/gadhittana01/go-modules-v2/grpc/user/pb";
+
+service UserService {
+  rpc CheckUserExists(CheckUserExistsReq) returns (CheckUserExistsResp);
+}

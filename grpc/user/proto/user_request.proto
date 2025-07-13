@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+package pb;
+
+option go_package = "github.com/gadhittana01/go-modules-v2/grpc/user/pb";
+
+message CheckUserExistsReq {
+    string user_id = 1;
+}
