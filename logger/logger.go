@@ -40,10 +40,10 @@ func Init() {
 
 	// Use pretty console writer for development
 	if os.Getenv("ENV") == "development" {
-		log.Logger = log.Output(zerolog.ConsoleWriter{Out: os.Stderr})
+		log.Logger = log.Output(zerolog.ConsoleWriter{Out: os.Stdout})
 	} else {
-		// Use JSON format for production
-		log.Logger = zerolog.New(os.Stderr).With().Timestamp().Logger()
+		// Use JSON format for production - output to stdout for better container log compatibility
+		log.Logger = zerolog.New(os.Stdout).With().Timestamp().Logger()
 	}
 
 	Logger = log.Logger
